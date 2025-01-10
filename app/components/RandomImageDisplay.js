@@ -86,7 +86,7 @@ const RandomImageDisplay = () => {
   }
 
   return (
-    <div className="fixed z-0 inset-0" onClick={getNextImage}>
+    <div className="fixed z-0 inset-0" onMouseDown={getNextImage}>
       {isLoading ? (
         <div className="flex items-center justify-center w-full h-full pointer-events-none select-none">
           <p className="text-[12px] leading-[15px] tracking-wider uppercase text-[#FFCC00] animate-pulse">
