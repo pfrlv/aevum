@@ -42,7 +42,7 @@ const RandomImageDisplay = () => {
               const x = window.innerWidth / 2 - width / 2
               const y = window.innerHeight / 2 - height / 2
               setImageIndex(1)
-              setImages([{ src: `/shoots/01.jpg`, x, y, width, height }])
+              setImages([{ src: firstImage.src, x, y, width, height }]);
             }
           }
         }
@@ -70,10 +70,7 @@ const RandomImageDisplay = () => {
       const y = event.clientY - height / 2
 
       setImageIndex(nextIndex)
-      setImages((prevImages) => [
-        ...prevImages,
-        { src: `/shoots/${nextImage}`, x, y, width, height },
-      ])
+      setImages(prevImages => [...prevImages, { src: img.src, x, y, width, height }]);
 
       if (soundFiles.length > 0) {
         const randomSound =
